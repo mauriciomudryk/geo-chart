@@ -6,12 +6,6 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'GeoChart',
       fileName: 'geo-chart'
-    },
-    rollupOptions: {
-      external: [],
-      output: {
-        globals: {}
-      }
     }
   }
 })
