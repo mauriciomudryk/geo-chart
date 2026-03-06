@@ -1,0 +1,27 @@
+.chart-label,
+.chart-axis-label {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-family: sans-serif;
+  white-space: nowrap;
+  pointer-events: none; /* Impede que os labels bloqueiem eventos do mouse no mapa */
+}
+.chart-title-container {
+  transform: translate(-50%, -100%);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.chart-subtitle {
+  font-size: 12px;
+  color: #cccccc;
+}

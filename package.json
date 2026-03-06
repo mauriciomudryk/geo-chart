@@ -9,9 +9,18 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "postbuild": "cp dist/geo-chart.js ../grafico_obj_mapa/src/geo-chart.js",
+    "watch": "chokidar \"src/**/*\" -c \"npm run build\""
   },
   "devDependencies": {
-    "@types/google.maps": "^3.58.1"
+    "@types/google.maps": "^3.58.1",
+    "@types/three": "^0.183.1",
+    "chokidar-cli": "^3.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "vite": "^5.x.x"
+  },
+  "dependencies": {
+    "three": "^0.183.2"
   }
 }
