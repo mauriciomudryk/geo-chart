@@ -56,7 +56,7 @@
           geoChartURL = "/geo-chart.js"; // Caminho para o arquivo local em desenvolvimento
         } else {
           // Busca o package.json para obter a versão mais recente
-          const pkg = await fetch("/package.json").then((res) => res.json());
+          const pkg = await fetch("/version").then((res) => res.json());
           const version = pkg.version;
           geoChartURL = `https://unpkg.com/geo-chart@${version}/dist/geo-chart.js`;
         }

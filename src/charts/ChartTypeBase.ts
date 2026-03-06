@@ -114,7 +114,7 @@ export class ChartTypeBase extends BaseChart {
     const titleText =
       this.options.type === ChartType.Line3D
         ? "Gráfico de Linhas 3Ds"
-        : "Gráfico de Barras 3Ds";
+        : "Gráfico de Barras 3Dss";
     const subTitleText =
       this.options.type === ChartType.Line3D
         ? "Subtítulo do Gráfico de Linhas 3D"
