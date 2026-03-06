@@ -115,6 +115,16 @@ const options = {
 };
 ```
 
+## 🔗 Links de Exemplos
+
+Abaixo estão alguns exemplos de uso da biblioteca **Geo Chart**.
+
+### 📊 Gráficos
+
+- **Gráfico de Barras 3D**  
+  Demonstra a criação de um gráfico de barras tridimensional utilizando dados simples.  
+  👉 https://mauriciomudryk.github.io/geo-chart/examples/example1.html
+
 ---
 
 # 📚 API
