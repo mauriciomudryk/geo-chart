@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
 import postcss from "rollup-plugin-postcss";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
@@ -16,7 +16,7 @@ export default defineConfig({
         }),
       ],
     },
-    minify: false, // <-- DESABILITA minificação
-    sourcemap: true, // <-- gera source map para debugar
+    minify: true, // <-- DESABILITA minificação
+    sourcemap: false, // <-- gera source map para debugar
   },
 });

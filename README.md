@@ -55,19 +55,23 @@ yarn add geo-chart
 # 🚀 Uso Básico
 
 ```javascript
-import { GeoChart, ChartType } from "geo-chart";
+import { GeoChart } from "../geo-chart.js";
+import { ChartType } from "../geo-chart.js";
+
+const dadosRandomicos = Array.from({ length: 10 }, () => ({
+  value: Math.floor(Math.random() * 201) - 100,
+}));
 
 const chart = new GeoChart({
-  type: ChartType.Bar3D,
-  data: [
-    { label: "Jan", value: 1200 },
-    { label: "Fev", value: 900 },
-    { label: "Mar", value: 1500 },
-    { label: "Abr", value: 700 },
-  ],
+  map,
+  data: [{ lat: graphLat, lng: graphLng, dados }],
+  options: {
+    type: ChartType.Bar3D,
+    width: 250,
+    height: 200,
+    data: dadosRandomicos,
+  },
 });
-
-chart.render(document.getElementById("chart-container"));
 ```
 
 ---
@@ -189,7 +193,7 @@ src/
 Clone o projeto:
 
 ```bash
-git clone https://github.com/seu-usuario/geo-chart.git
+git clone https://github.com/mauriciomudryk/geo-chart.git
 ```
 
 Entre na pasta:
