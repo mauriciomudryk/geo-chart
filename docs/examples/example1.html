@@ -44,23 +44,44 @@
     <script src="https://unpkg.com/three@0.146.0/examples/js/renderers/CSS2DRenderer.js"></script>
 
     <script type="module">
-      import { GeoChart } from "https://unpkg.com/geo-chart@1.0.2/dist/geo-chart.js"
-      import { ChartType } from "https://unpkg.com/geo-chart@1.0.2/dist/geo-chart.js";
-      const dadosRandomicos = Array.from({ length: 10 }, () => ({
-        value: Math.floor(Math.random() * 200001) - 100000, // -100 a 100 inclusive
-      }));      
-      const chart = new GeoChart({
-        map,
-        data: [{ lat: graphLat, lng: graphLng, dadosRandomicos }],
-        options: {
+      const isDevelopment =
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1" ||
+        window.location.hostname.startsWith("geo-chart.local");
+
+      async function loadChart() {
+        let geoChartURL;
+
+        if (isDevelopment) {
+          geoChartURL = "/geo-chart.js"; // Caminho para o arquivo local em desenvolvimento
+        } else {
+          // Busca o package.json para obter a versão mais recente
+          const pkg = await fetch("/package.json").then((res) => res.json());
+          const version = pkg.version;
+          geoChartURL = `https://unpkg.com/geo-chart@${version}/dist/geo-chart.js`;
+        }
+
+        // Importa dinamicamente baseado no ambiente
+        const { GeoChart, ChartType } = await import(geoChartURL);
+
+        const dadosRandomicos = Array.from({ length: 10 }, () => ({
+          value: Math.floor(Math.random() * 200001) - 100000,
+        }));
+
+        new GeoChart({
+          map,
+          data: [{ lat: graphLat, lng: graphLng, dados: dadosRandomicos }],
+          options: {
             type: ChartType.Bar3D,
             width: 250,
             height: 200,
-            data: dadosRandomicos
-          }
-      });
+            data: dadosRandomicos,
+          },
+        });
+      }
+
+      loadChart();
     </script>
-</script>    
   </head>
   <body>
     <div id="map"></div>

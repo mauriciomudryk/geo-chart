@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "cp dist/geo-chart.js ../grafico_obj_mapa/src/geo-chart.js",
+    "postbuild": "cp dist/geo-chart.js ../grafico_obj_mapa/src/geo-chart.js; cp dist/geo-chart.js docs/examples/geo-chart.js",
     "watch": "chokidar \"src/**/*\" -c \"npm run build\""
   },
   "devDependencies": {
