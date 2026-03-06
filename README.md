@@ -26,11 +26,7 @@ Construída sobre **Three.js**, a Geo Chart permite renderizar gráficos de **ba
 
 # 📸 Preview
 
-```
 ![Geo Chart Demo](docs/demo.gif)
-```
-
-Adicione um gif do gráfico funcionando para demonstrar o projeto.
 
 ---
 
