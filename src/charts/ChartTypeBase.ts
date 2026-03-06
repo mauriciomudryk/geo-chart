@@ -113,7 +113,7 @@ export class ChartTypeBase extends BaseChart {
   private createTitles(): void {
     const titleText =
       this.options.type === ChartType.Line3D
-        ? "Gráfico de Linhas 3Ds"
+        ? "Gráfico de Linhas 3Dssss"
         : "Gráfico de Barras 3Dss";
     const subTitleText =
       this.options.type === ChartType.Line3D
